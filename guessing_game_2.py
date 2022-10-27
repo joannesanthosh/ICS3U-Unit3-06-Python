@@ -2,24 +2,30 @@
 
 # Created by: Joanne Santhosh
 # Created on: Oct 2022
-# This program uses a try statement
+# This program gets the user to guess a number correctly or incorrectly
+
+import random
 
 
 def main():
-    # this function uses a try statement
+    # this function checks if the guess is correct
 
     # input
-    integer_as_string = input("Enter an integer: ")
+    random_number = random.randint(0, 9)  # a number between 0 and 9
+    user_guess_as_string = input("Enter a number between 0-9: ")
     print("")
 
     # process & output
     try:
-        integer_as_number = int(integer_as_string)
-        print("You entered an integer correctly")
+        user_guess_as_number = int(user_guess_as_string)
+        if user_guess_as_number == random_number:
+            print("Correct guess!")
+        else:
+            print("Incorrect. The number was: {0}.".format(random_number))
     except ValueError:
         print("This was not an integer")
     finally:
-        print("Thanks for playing")
+        print("Done.")
 
 
 if __name__ == "__main__":
