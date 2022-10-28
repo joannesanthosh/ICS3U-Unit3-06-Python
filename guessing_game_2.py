@@ -23,7 +23,7 @@ def main():
         else:
             print("Incorrect. The number was: {0}.".format(random_number))
     except ValueError:
-        print("This was not an integer")
+        print("{0} is not an integer".format(user_guess_as_string))
     finally:
         print("Done.")
 
